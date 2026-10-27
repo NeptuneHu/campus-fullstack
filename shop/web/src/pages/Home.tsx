@@ -31,7 +31,7 @@ export default function Home() {
             <div className="p-4">
               <h2 className="font-medium">{product.name}</h2>
               <p className="mt-2 text-sm text-amber-900">{yuan(product.price)}</p>
-              <p className="mt-1 text-xs text-stone-500">库存 {product.stock}</p>
+              <p className="mt-1 text-xs text-stone-500">库存 {product.stock}{product.stock > 0 && product.stock <= 15 && <span className="ml-2 text-amber-800">只剩不多</span>}</p>
             </div>
           </Link>
         ))}
