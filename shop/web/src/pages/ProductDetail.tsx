@@ -41,7 +41,7 @@ export default function ProductDetail() {
       <div className="rounded-3xl bg-white p-6 ring-1 ring-stone-200">
         <h1 className="text-3xl font-semibold">{product.name}</h1>
         <p className="mt-3 text-2xl text-amber-900">{yuan(product.price)}</p>
-        <p className="mt-1 text-sm text-stone-500">库存 {product.stock}</p>
+        <p className="mt-1 text-sm text-stone-500">库存 {product.stock}{product.stock > 0 && product.stock <= 15 && <span className="ml-2 text-amber-800">只剩不多</span>}</p>
         <p className="mt-4 leading-7 text-stone-700">{product.description}</p>
         <div className="mt-6 flex items-center gap-3">
           <input type="number" min={1} max={product.stock} value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} className="w-24 rounded-xl border border-stone-200 px-3 py-2" />
