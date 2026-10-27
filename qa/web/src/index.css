@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+  background: #f3f6f6;
+  color: #102027;
+}
+
+.markdown p { margin: 0.7rem 0; line-height: 1.8; }
+.markdown ul, .markdown ol { margin: 0.5rem 0; padding-left: 1.25rem; }
+.markdown li { margin: 0.2rem 0; }
+.markdown h1, .markdown h2 { margin: 1rem 0 0.4rem; font-weight: 650; }

@@ -1,0 +1,22 @@
+name: fullstack
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: fullstack-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      TZ: Asia/Shanghai
+    ports:
+      - "3306:3306"
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-time-zone=+08:00
+    volumes:
+      - fullstack_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-proot"]
+      interval: 3s
+      timeout: 5s
+      retries: 40
+
+volumes:
+  fullstack_mysql:

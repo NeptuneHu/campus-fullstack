@@ -1,0 +1,13 @@
+{
+  "name": "fullstack-practice",
+  "private": true,
+  "scripts": {
+    "db": "docker compose up -d",
+    "install:all": "npm install && npm --prefix blog/server install && npm --prefix blog/web install && npm --prefix qa/server install && npm --prefix qa/web install && npm --prefix shop/server install && npm --prefix shop/web install",
+    "init": "npm --prefix blog/server run init && npm --prefix qa/server run init && npm --prefix shop/server run init",
+    "dev": "concurrently -n blog-api,qa-api,shop-api,blog,qa,shop -c blue,green,yellow,magenta,cyan,red \"npm --prefix blog/server run dev\" \"npm --prefix qa/server run dev\" \"npm --prefix shop/server run dev\" \"npm --prefix blog/web run dev\" \"npm --prefix qa/web run dev\" \"npm --prefix shop/web run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
